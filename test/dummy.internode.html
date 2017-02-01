@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Usage test</title>
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+</head><body>
+  <h2>Test with hard-configured alias:</h2>
+  <p>XHR errors when testing via file:// protocol? Try <a
+    href="https://mk-pmb.github.io/curl-internode-pmb-js/test/dummy.internode.html"
+    >HTTP(S)</a>.</p>
+  <script src="../../amdldr16-pmb/lib/dirty-shams/pre-console.js"></script>
+  <script>
+    window.preconfigure = { loader: 'curl-internode-pmb/internode.js' };
+  </script>
+  <script src="../../amdldr16-pmb/dist/al.js" debug-precfg="preconfigure">/*[
+    [ "cjs!doc./dummy.js" ]
+  ]*/</script>
+</body></html>

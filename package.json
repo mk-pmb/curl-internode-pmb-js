@@ -1,0 +1,34 @@
+{ "name": "curl-internode-pmb",
+  "version": "0.0.1",
+  "description": "A loader plugin for curl-amd that makes it more interoperable with some of my Node.js modules.",
+  "keywords": [
+    "amd",
+    "curl",
+    "curl-amd",
+    "json",
+    "node.js",
+    "nodejs"
+  ],
+
+  "author": "M.K. (https://github.com/mk-pmb)",
+  "homepage": "https://github.com/mk-pmb/curl-internode-pmb-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/curl-internode-pmb-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mk-pmb/curl-internode-pmb-js/issues"
+  },
+
+  "private": false, "license": "ISC",
+
+  "main": "internode.js",
+  "scripts": { "test": "nodejs test/all.js" },
+  "directories": { "test": "test" },
+
+  "dependencies": {},
+  "devDependencies": { "equal-pmb": "^0.1.0" },
+
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
+}
