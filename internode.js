@@ -5,12 +5,33 @@
   'use strict';
   var m = ((typeof module === 'object') && module), e = (m && m.exports);
   if (e) { m.exports = (factory(require, e, m) || m.exports); }
-})(function () {
+})(function (require) {
   'use strict';
 
   var EX = {
     '.json':  'json!',
   };
+
+
+  (function interceptCurlRequire() {
+    var core = require('curl/_privileged').core;
+    console.log('internode init:', {
+      version:  require('curl').version,    // "0.8.13"
+      core:     String(core),               // "[object Object]"
+      origCC:   String(core.createContext), // "undefined"
+    });
+    console.log('core:', core, 'keys:', Object.keys(core).join(', '));
+
+    //core.createContext = function () {
+    //  var dfn = origCC.apply(this, arguments), origRequire = dfn.require;
+    //  dfn.require = function () {
+    //    console.log.apply(null, ['intercepted require:'
+    //      ].concat(Array.from(arguments)));
+    //    return origRequire.apply(this, arguments);
+    //  };
+    //  return dfn;
+    //};
+  }());
 
 
   EX.load = function (resId, curlRqr, deliverToCurl, config) {
