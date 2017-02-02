@@ -19,8 +19,7 @@
     plugin = ((config.guessPluginsByFext || false)[fext] || EX[fext] || false);
     console.log('internode check:', [resId, fext, plugin]);
 
-    //if (plugin) { resId = plugin + '!' + resId; }
-    resId = (plugin || 'js') + '!' + resId;
+    if (plugin) { resId = plugin + resId; }
 
     function onLoad(mod) {
       console.log('internode onLoad:', resId, mod, arguments.length);
@@ -28,7 +27,7 @@
     }
 
     function onError(err) {
-      console.error('internode onError:', resId, Array.from(arguments));
+      console.error('internode onError:', resId, err, arguments.length);
       return deliverToCurl.error(err);
     }
 
