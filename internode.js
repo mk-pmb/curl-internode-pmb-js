@@ -8,19 +8,21 @@
 })(function (require) {
   'use strict';
 
-  var EX = {
+  var findMinifiedProp = require('findminiprop'), EX = {
     '.json':  'json!',
   };
 
 
   (function interceptCurlRequire() {
-    var core = require('curl/_privileged').core;
-    console.log('internode init:', {
-      version:  require('curl').version,    // "0.8.13"
-      core:     String(core),               // "[object Object]"
-      origCC:   String(core.createContext), // "undefined"
+
+    var core = require('curl/_privileged').core,
+      origCC = findMinifiedProp(core, 'createContext', 'function',
+        /Error\(\SModule not resolved: \S/);
+
+    window.curl.core = core;
+    Object.keys(core).sort().forEach(function (key) {
+      console.log('core.' + key, core[key]);
     });
-    console.log('core:', core, 'keys:', Object.keys(core).join(', '));
 
     //core.createContext = function () {
     //  var dfn = origCC.apply(this, arguments), origRequire = dfn.require;
