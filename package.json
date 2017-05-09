@@ -1,6 +1,6 @@
 { "name": "curl-internode-pmb",
   "version": "0.0.1",
-  "description": "A loader plugin for curl-amd that makes it more interoperable with some of my Node.js modules.",
+  "description": "[Abandoned: Just use system.js.] A loader plugin for curl-amd that makes it more interoperable with some of my Node.js modules.",
   "keywords": [
     "amd",
     "curl",

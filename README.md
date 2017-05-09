@@ -5,22 +5,17 @@ curl-internode-pmb
 <!--/#echo -->
 
 <!--#echo json="package.json" key="description" -->
-A loader plugin for curl-amd that makes it more interoperable with some of my
-Node.js modules.
+[Abandoned: Just use system.js.] A loader plugin for curl-amd that makes it
+more interoperable with some of my Node.js modules.
 <!--/#echo -->
 
+## Abandoned: Use system.js.
+* https://github.com/systemjs/systemjs/
+* https://www.npmjs.com/package/systemjs
 
 
 
 <!--#toc stop="scan" -->
-
-
-
-Known issues
-------------
-
-* needs more/better tests and docs
-
 
 
 
